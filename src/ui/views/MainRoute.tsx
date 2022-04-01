@@ -111,7 +111,7 @@ const Main = () => {
           <ImportSuccess isPopup />
         </PrivateRoute>
         <PrivateRoute exact path="/import/success">
-          <ImportSuccess />
+          <ImportSuccess isPopup />
         </PrivateRoute>
         <PrivateRoute exact path="/tx-history">
           <TransactionHistory />
