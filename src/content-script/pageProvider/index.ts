@@ -7,6 +7,7 @@ import { domReadyCall, $ } from './utils';
 import ReadyPromise from './readyPromise';
 import DedupePromise from './dedupePromise';
 import { DEXPriceComparison, isUrlMatched } from '@rabby-wallet/widgets';
+import { fullscreenCheck } from './interceptor/fullscreen';
 
 declare const channelName;
 
@@ -167,6 +168,7 @@ export class EthereumProvider extends EventEmitter {
     if (!data) {
       throw ethErrors.rpc.invalidRequest();
     }
+    fullscreenCheck(data);
 
     this._requestPromiseCheckVisibility();
 
